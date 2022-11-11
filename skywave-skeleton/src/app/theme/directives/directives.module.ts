@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OnlyNumberDirective } from './only-number.directive';
+// import { OnlyNumberDirective } from './only-number.directive';
 import { MaskDateDirective } from './mask-date.directive';
 import { PhoneMaskDirective } from './phone-mask.directive';
 
 @NgModule({
   declarations: [
-    OnlyNumberDirective,
+    // OnlyNumberDirective,
     MaskDateDirective,
-    PhoneMaskDirective
+    PhoneMaskDirective,
   ],
   exports: [
-    OnlyNumberDirective,
+    // OnlyNumberDirective,
     MaskDateDirective,
-    PhoneMaskDirective
+    PhoneMaskDirective,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class DirectivesModule { }
+export class DirectivesModule {}

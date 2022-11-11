@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';  
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SwiperModule } from 'ngx-swiper-wrapper'; 
+import { SwiperModule } from 'ngx-swiper-wrapper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
@@ -25,10 +25,9 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
-
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: false,
-  suppressScrollX: true               
+  suppressScrollX: true,
 };
 
 import { PipesModule } from '../theme/pipes/pipes.module';
@@ -49,16 +48,16 @@ import { HttpClientModule } from '@angular/common/http';
     GetInTouchComponent,
     MenuItemComponent,
     MenuItemsCarouselComponent,
-    CommentsComponent
+    CommentsComponent,
   ],
   imports: [
     HttpClientModule,
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule, 
+    FormsModule,
     FlexLayoutModule,
-    SwiperModule, 
+    SwiperModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
@@ -75,17 +74,17 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginatorModule,
     MatToolbarModule,
     MatTabsModule,
-    MatTooltipModule,    
+    MatTooltipModule,
     PerfectScrollbarModule,
     PipesModule,
-    DirectivesModule
+    DirectivesModule,
   ],
   exports: [
     RouterModule,
     ReactiveFormsModule,
-    FormsModule, 
+    FormsModule,
     FlexLayoutModule,
-    SwiperModule, 
+    SwiperModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
@@ -99,10 +98,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatSlideToggleModule,
     MatSnackBarModule,
-    MatPaginatorModule,    
+    MatPaginatorModule,
     MatToolbarModule,
     MatTabsModule,
-    MatTooltipModule,        
+    MatTooltipModule,
     PerfectScrollbarModule,
     PipesModule,
     DirectivesModule,
@@ -111,10 +110,13 @@ import { HttpClientModule } from '@angular/common/http';
     GetInTouchComponent,
     MenuItemComponent,
     MenuItemsCarouselComponent,
-    CommentsComponent
+    CommentsComponent,
   ],
-  providers:[
-    { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
-  ]
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    },
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

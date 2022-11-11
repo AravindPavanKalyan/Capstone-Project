@@ -1261,4 +1261,10 @@ button.swipe-arrow{
         overflow: auto !important;
     }
 } 
+
+@media screen and (max-width: 599px) {
+    #top-toolbar.mat-toolbar {
+      height: 100px !important;
+    }
+}
  

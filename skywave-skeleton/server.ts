@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const template = fs.readFileSync(path.join(process.cwd(), 'dist/browser/index.html')).toString();
 const win = domino.createWindow(template);
-global['window'] = win;
+global.window = win;
 Object.defineProperty(win.document.body.style, 'transform', {
   value: () => {
     return {
@@ -14,9 +14,9 @@ Object.defineProperty(win.document.body.style, 'transform', {
     };
   },
 });
-global['document'] = win.document;
+global.document = win.document;
 // global['CSS'] = null;
-// global['Prism'] = null; 
+// global['Prism'] = null;
 
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';

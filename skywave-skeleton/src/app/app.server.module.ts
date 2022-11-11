@@ -5,7 +5,7 @@ import { FlexLayoutServerModule } from '@angular/flex-layout/server';
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 
-import { TranslateUniversalLoader } from './theme/utils/translate-universal-loader'; 
+import { TranslateUniversalLoader } from './theme/utils/translate-universal-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 export function translateFactory() {
   return new TranslateUniversalLoader('./dist/browser/assets/i18n', '.json');
@@ -19,9 +19,9 @@ export function translateFactory() {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: translateFactory
-      }
-    })
+        useFactory: translateFactory,
+      },
+    }),
   ],
   bootstrap: [AppComponent],
 })

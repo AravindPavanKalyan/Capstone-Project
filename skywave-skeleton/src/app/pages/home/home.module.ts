@@ -5,15 +5,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home.component';
 
 export const routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full'  }
+  { path: '', component: HomeComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule
-  ]
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
 })
-export class HomeModule { }
+export class HomeModule {}

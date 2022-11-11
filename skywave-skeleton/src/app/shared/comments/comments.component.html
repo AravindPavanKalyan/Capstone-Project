@@ -69,11 +69,7 @@
     <div fxFlex="100" fxFlex.gt-sm="49" class="p-2">
       <mat-form-field appearance="outline" class="w-100">
         <mat-label>Your name</mat-label>
-        <input
-          matInput
-          placeholder="Your name"
-          formControlName="name"
-        />
+        <input matInput placeholder="Your name" formControlName="name" />
         <mat-error *ngIf="commentForm.controls.name.errors?.required"
           >Name is required</mat-error
         >
@@ -85,11 +81,7 @@
     <div fxFlex="100" fxFlex.gt-sm="49" class="p-2">
       <mat-form-field appearance="outline" class="w-100">
         <mat-label>Your email</mat-label>
-        <input
-          matInput
-          placeholder="Your email"
-          formControlName="email"
-        />
+        <input matInput placeholder="Your email" formControlName="email" />
         <mat-error *ngIf="commentForm.controls.email.errors?.required"
           >Email is required</mat-error
         >
@@ -99,13 +91,7 @@
       </mat-form-field>
     </div>
     <div fxFlex="100" class="text-center w-100">
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        class="uppercase"
-        [disabled]="commentForm.invalid"
-      >
+      <button mat-raised-button color="primary" type="submit" class="uppercase">
         Submit review
       </button>
     </div>

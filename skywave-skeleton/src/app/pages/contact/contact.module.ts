@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
-import { AgmCoreModule } from '@agm/core'; 
+import { AgmCoreModule } from '@agm/core';
 import { ContactComponent } from './contact.component';
 
 export const routes = [
-  { path: '', component: ContactComponent, pathMatch: 'full'  }
+  { path: '', component: ContactComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -15,7 +15,7 @@ export const routes = [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    AgmCoreModule
-  ]
+    AgmCoreModule,
+  ],
 })
-export class ContactModule { }
+export class ContactModule {}

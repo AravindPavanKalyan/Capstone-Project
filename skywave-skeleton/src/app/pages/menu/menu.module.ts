@@ -5,19 +5,15 @@ import { SharedModule } from '../../shared/shared.module';
 import { PipesModule } from '../../theme/pipes/pipes.module';
 import { MenuSingleComponent } from './menu-single/menu-single.component';
 
-export const routes = [
-  { path: ':id', component: MenuSingleComponent }
-];
+export const routes = [{ path: ':id', component: MenuSingleComponent }];
 
 @NgModule({
-  declarations: [
-    MenuSingleComponent
-  ],
+  declarations: [MenuSingleComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    PipesModule
-  ]
+    PipesModule,
+  ],
 })
-export class MenuModule { }
+export class MenuModule {}

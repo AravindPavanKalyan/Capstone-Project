@@ -1,16 +1,39 @@
 <div class="px-3">
   <div class="theme-container">
-    <div class="get-in-touch bg-primary asdf" ngClass.lt-md="mt-3">
-      <!--  Your code to implement Get In Touch Feature-->
+    <div
+      class="get-in-touch bg-primary"
+      ngClass.lt-md="mt-3"
+      fxLayout="row wrap"
+      fxLayout.xs="column"
+    >
+      <!--  implementing Get In Touch Feature starts-->
+      <!-- operator chef image in get-in-touch -->
+      <div>
+        <img src="assets/images/others/operator.png" alt="operator" />
+      </div>
+      
+      <!-- get-in-touch description -->
+      <div class="content get-in-touch-desc" fxLayoutAlign="center center">
+        Looking for authentic food?
+      </div>
 
-        <div fxLayout="row">
-          <img src="../../../assets/images/others/operator.png"/>
+      <!-- get-in-touch contact -->
+      <div class="content" fxLayoutAlign="center center">
+        <div class="custom-icon">
+          <mat-icon>call</mat-icon>
         </div>
+        <div class="call-now">
+          <span>Call Us Now</span>
+          <span>(+91) 123 456 7890</span>
+        </div>
+      </div>
 
-        <div class="content">Looking for authentic food?</div>
-        <button mat-flat-button color="white" fxLayoutAlign="start right">
-          GET IN TOUCH
-        </button>
+      <!-- get-in-touch button -->
+      <div class="content" fxLayoutAlign="center center">
+        <button mat-flat-button class="uppercase">Get in touch</button>
+      </div>
+      <!--  implementing Get In Touch Feature ends-->
+
     </div>
   </div>
 </div>
