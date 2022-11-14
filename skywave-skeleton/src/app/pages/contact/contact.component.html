@@ -9,16 +9,15 @@
 <div class="px-3">
   <div class="theme-container">
     <!-- mat-card starts -->
-    <mat-card fxLayoutAlign="center center">
+    <mat-card class="mat-card-style pt-5" fxLayoutAlign="center center">
       <mat-card-content>
         <!-- contact details -->
-        <div class="contact-bar" fxLayout.xs="column">
+        <div class="contact-bar mb-5" fxLayout.xs="column">
           <!-- Address details -->
           <div fxLayout="column" fxLayoutAlign="start center" fxFlex>
             <mat-icon color="primary">home</mat-icon>
             <span class="primary-color bold">Address:</span>
             <span>2903 Avenue Z, MG Marg, DL, India</span>
-            <!-- <span class="hide">empty line</span> -->
           </div>
           <!-- Phone details -->
           <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
@@ -36,12 +35,13 @@
           </div>
         </div>
 
-        <div class="form-with-img" fxLayoutGap="2%" fxLayout.xs="column">
+        <div fxLayoutGap="2%" fxLayout.xs="column">
           <div fxFlex>
             <!-- Get in touch form title -->
             <mat-card-title
               fxLayout="column"
               class="secondary-font primary-color"
+              fxLayoutAlign="center center"
             >
               Get In Touch
             </mat-card-title>
@@ -50,7 +50,7 @@
               [formGroup]="contactForm"
               (ngSubmit)="onContactFormSubmit()"
               fxLayout="row wrap"
-              fxLayoutAlign="space-between"
+              fxLayoutAlign="center center"
             >
               <!-- Get in touch form name field -->
               <mat-form-field appearance="outline" class="w-100">
@@ -91,7 +91,7 @@
           </div>
           <!-- About-1 image -->
           <div fxFlex>
-            <img src="assets/images/others/about-1.jpg" alt="about-1" />
+            <img class="image" src="assets/images/others/about-1.jpg" alt="about-1" />
           </div>
         </div>
       </mat-card-content>
