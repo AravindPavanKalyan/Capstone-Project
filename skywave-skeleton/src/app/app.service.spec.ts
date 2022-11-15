@@ -69,7 +69,6 @@ describe('AppService', () => {
     httpClientSpy.get.and.returnValue(of(menuItems));
     service.getMenuItems().subscribe({
       next: (res: any) => {
-        console.log(res);
         expect(res).toEqual(menuItems);
         done();
       },
@@ -103,7 +102,6 @@ describe('AppService', () => {
     httpClientSpy.get.and.returnValue(of(menuItemsById));
     service.getMenuItemById(11).subscribe({
       next: (res: any) => {
-        console.log(res);
         expect(res).toEqual(menuItemsById);
         done();
       },

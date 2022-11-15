@@ -89,7 +89,6 @@ describe('ContactComponent', () => {
     spyOn(component.appService, 'postMessage')
       .withArgs(component.contactForm.value)
       .and.returnValue(of(mockResponse));
-    console.log('spec3', component.contactForm);
     component.appService.postMessage(component.contactForm.value).subscribe({
       next: (res) => {
         expect(res).toEqual(mockResponse);
