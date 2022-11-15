@@ -287,7 +287,7 @@ export class FooterComponent implements OnInit {
       console.log(values);
     }
   }
-  
+
   // the following method is no where used in the project
   // public onSubscribeFormSubmit(values:Object):void {
   //     if (this.subscribeForm.valid) {
