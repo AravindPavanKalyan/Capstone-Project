@@ -4,6 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
 import { AppSettings } from 'src/app/app.settings';
+import { environment } from 'src/environments/environment';
 import { CommentsComponent } from './comments.component';
 
 describe('CommentsComponent', () => {
@@ -30,6 +31,32 @@ describe('CommentsComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  //  testing commentForm by sending invalid data, and recieve response
+  it(`should call 'onCommentFormSubmit', when invalid form data is given and recieve the response `, () => {
+    // setting empty values for commentForm
+    component.commentForm?.controls.name.setValue(''),
+      component.commentForm?.controls.rate.setValue('80%'),
+      component.commentForm?.controls.email.setValue('khs@g.com'),
+      component.commentForm?.controls.review.setValue('review');
+    fixture.detectChanges();
+
+    spyOn(component, 'onCommentFormSubmit').and.callThrough();
+    component.onCommentFormSubmit(component.commentForm.value);
+    expect(component.onCommentFormSubmit).toHaveBeenCalled();
+
+    const mockResponse = 'Invalid input';
+
+    spyOn(component.http, 'post')
+      .withArgs(environment.commentFormApi, component.commentForm.value)
+      .and.throwError('Invalid input');
+    expect(function() {
+      component.http.post(
+        environment.commentFormApi,
+        component.commentForm.value
+      );
+    }).toThrow(new Error('Invalid input'));
+  });
+
   // testing commentForm, send data, and recieve response
   it(`should call 'onCommentFormSubmit', send the form data and recieve the response `, (done: DoneFn) => {
     // setting values for commentForm
@@ -46,10 +73,10 @@ describe('CommentsComponent', () => {
     const mockResponse = 'Success';
 
     spyOn(component.http, 'post')
-      .withArgs(component.commentFormApi, component.commentForm.value)
+      .withArgs(environment.commentFormApi, component.commentForm.value)
       .and.returnValue(of(mockResponse));
     component.http
-      .post(component.commentFormApi, component.commentForm.value)
+      .post(environment.commentFormApi, component.commentForm.value)
       .subscribe({
         next: (res) => {
           expect(res).toEqual(mockResponse);

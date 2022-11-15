@@ -25,6 +25,15 @@ export class PagesComponent implements OnInit, AfterViewInit {
   public showBackToTop = false;
 
   public settings: Settings;
+
+  menuBarItems = [{
+    name: 'Home', routerLink: '/',
+  }, {
+    name: 'About Us', routerLink: '/about',
+  }, {
+    name: 'Contact', routerLink: '/contact',
+  }];
+
   constructor(
     public appSettings: AppSettings,
     public router: Router,

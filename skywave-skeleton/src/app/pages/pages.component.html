@@ -6,30 +6,21 @@
     class="sidenav mat-elevation-z6"
   >
     <!-- Menu Bar implementation -->
-    <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayoutAlign="space-between center">
       <!-- Menu Bar title -->
-      <h2>Menus</h2>
+      <h2>Menu</h2>
       <button mat-icon-button color="warn" (click)="sidenav.close()">
         <mat-icon color="warn">close</mat-icon>
       </button>
     </div>
     <div class="divider"></div>
-    <div
-      fxLayout="row"
-      fxLayoutAlign="space-between center"
-      class="op-header mat-elevation-z1"
-    ></div>
     <!-- Menu Bar List -->
-    <div fxLayout="column" fxLayoutAlign="space-around start" class="menubar">
-      <div>
-        <span routerLink="/">Home</span>
-      </div>
-      <div>
-        <span routerLink="/about">About Us</span>
-      </div>
-      <div>
-        <span routerLink="/contact">Contact</span>
-      </div>
+    <div fxLayout="column">
+      <span
+        *ngFor="let menuBarItem of menuBarItems"
+        [routerLink]="menuBarItem.routerLink"
+        >{{ menuBarItem.name }}</span
+      >
     </div>
     <!-- Menu Bar ends -->
     <div class="divider"></div>

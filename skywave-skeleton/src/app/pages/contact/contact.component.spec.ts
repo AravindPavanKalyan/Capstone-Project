@@ -43,8 +43,30 @@ describe('ContactComponent', () => {
     expect(component.contactForm.valid).toBeFalse();
   });
 
+  // testing onContactFormSubmit method when emptyform fields are given
+  it(`should return error message when empty form is submitted 'onContactFormSubmit'`, () => {
+    // enter valid input values only then , call onContactFormSubmit
+    component.contactForm?.controls.name.setValue('');
+    component.contactForm?.controls.phone.setValue('');
+    component.contactForm?.controls.email.setValue('');
+    component.contactForm?.controls.message.setValue('');
+
+    fixture.detectChanges(); // you must detect changes only then submit btn will be enabled
+
+    spyOn(component, 'onContactFormSubmit').and.callThrough();
+    component.onContactFormSubmit();
+    expect(component.onContactFormSubmit).toHaveBeenCalled();
+
+    spyOn(component.appService, 'postMessage')
+      .withArgs(component.contactForm.value)
+      .and.throwError('Invalid Input');
+    expect(function() {
+      component.appService.postMessage(component.contactForm.value);
+    }).toThrow(new Error('Invalid Input'));
+  });
+
   // testing onContactFormSubmit method when form is valid and recieve mockData
-  it(`should call 'onContactFormSubmit'`, (done: DoneFn) => {
+  it(`should call 'onContactFormSubmit' with proper data and receive mock data`, (done: DoneFn) => {
     // enter valid input values only then , call onContactFormSubmit
     component.contactForm?.controls.name.setValue('Virat Kohli');
     component.contactForm?.controls.phone.setValue('24234234');

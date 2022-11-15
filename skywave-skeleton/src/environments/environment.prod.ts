@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  url: ''
+  url: "",
+  commentFormApi: "http://localhost:8080/savereview",
+  mailApi: 'https://mailthis.to/codeninja',
 };

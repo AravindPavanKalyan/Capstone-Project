@@ -26,7 +26,6 @@ export class Data {
   providedIn: 'root',
 })
 export class AppService {
-  private mailApi = 'https://mailthis.to/codeninja';
 
   constructor(
     public http: HttpClient,
@@ -441,7 +440,7 @@ export class AppService {
     return this.http.get<Category[]>(this.url + 'categories.json');
   }
   public postMessage(input: any): Observable<any> {
-    return this.http.post(this.mailApi, input, { responseType: 'text' }).pipe(
+    return this.http.post(environment.mailApi, input, { responseType: 'text' }).pipe(
       map(
         (response: any) => {
           if (response) {

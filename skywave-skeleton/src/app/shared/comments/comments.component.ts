@@ -5,6 +5,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-comments',
@@ -73,8 +74,6 @@ export class CommentsComponent implements OnInit {
     },
   ];
 
-  public commentFormApi = 'http://localhost:8080/savereview';
-
   constructor(
     public fb: FormBuilder,
     public http: HttpClient,
@@ -106,7 +105,7 @@ export class CommentsComponent implements OnInit {
         // making the API Call form this place to save the reviews.
         //  On success returning to home page.
         this.http
-          .post(this.commentFormApi, commentFormData, { responseType: 'text' })
+          .post(environment.commentFormApi, commentFormData, { responseType: 'text' })
           .pipe(
             map(
               (response: any) => {
